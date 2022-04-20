@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Stock Prediction</title>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  </head>
+  <body>
+
+{% extends "template.html" %}
+{% block content %}
+    <div class="w3-container w3-gray">
+    <h1> Stock Prediction Application </h1>
+    <h3> by Team StockMesh </h3>
+<!--    <p> Paniti Mongkonpathumrat, Jackie Fan, Vedaanti Baliga </p>-->
+
+    </div>
+
+    <p>Select the stock you wish to see predictions for:</p>
+    <form action="{{url_for('view_model')}}" method="post">
+        <select name="stock" method="GET" action="/">
+            <option value="{{tickers[0]}}" selected>{{tickers[0]}}</option>
+            {% for ticker in tickers[1:] %}
+            <option value="{{ticker}}">{{ticker}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit"/>
+    </form>
+
+
+{% endblock %}
+
+  </body>
+
+</html>

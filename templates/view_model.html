@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>{{ stock }} Data</title>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  </head>
+  <body>
+
+{% extends "template.html" %}
+{% block content %}
+
+<!--        <a>Viewing historical data and prediction for {{ stock }}:</a>-->
+        <img src="data:image/png;base64, {{ stock_plot_url }}">
+        <img src="data:image/png;base64, {{ decision_plot_url }}">
+        <img src="data:image/png;base64, {{ macro_plot_url }}">
+        <img src="data:image/png;base64, {{ portfolio_plot_url }}">
+
+
+{% endblock %}
+
+  </body>
+
+</html>
