@@ -11,14 +11,32 @@
 </head>
   <body>
     <header>
-      <div class="w3-container w3-gray">
+      <div class="w3-container w3-light-green">
         <h1 class="logo">DSCI 560 Project</h1>
+        <h1> Stock Prediction Application </h1>
+        <h3> by Team StockMesh - Paniti Mongkonpathumrat, Jackie Fan, Vedaanti Baliga</h3>
         <strong><nav>
           <ul class="menu">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <a href="{{ url_for('home') }}">Home</a>
           </ul>
         </nav></strong>
       </div>
+      <div class="w3-container w3-gray">
+
+      </div>
+
+      <form action="{{url_for('view_model')}}" method="post">
+        <div class="button-group" style="width:100%">
+          <button input type="submit" style="width:12.2%" name="stock" value="AAPL">AAPL</button>
+          <button input type="submit" style="width:12.2%" name="stock" value="MSFT">MSFT</button>
+          <button input type="submit" style="width:12.2%" name="stock" value="GOOG">GOOG</button>
+          <button input type="submit" style="width:12.2%" name="stock" value="AMZN">AMZN</button>
+          <button input type="submit" style="width:12.2%" name="stock" value="BRK-A">BRK-A</button>
+          <button input type="submit" style="width:12.2%" name="stock" value="UNH">UNH</button>
+          <button input type="submit" style="width:12.2%" name="stock" value="JNJ">JNJ</button>
+          <button input type="submit" style="width:12.2%" name="stock" value="WMT">WMT</button>
+        </div>
+      </form>
     </header>
     <div class="container">
       {% block content %}

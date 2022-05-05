@@ -10,24 +10,27 @@
 
 {% extends "template.html" %}
 {% block content %}
-    <div class="w3-container w3-gray">
-    <h1> Stock Prediction Application </h1>
-    <h3> by Team StockMesh </h3>
-<!--    <p> Paniti Mongkonpathumrat, Jackie Fan, Vedaanti Baliga </p>-->
 
+<!--    <p>Select the stock you wish to see predictions for:</p>-->
+<!--    <form action="{{url_for('view_model')}}" method="post">-->
+<!--        <select name="stock" method="GET" action="/">-->
+<!--            <option value="{{tickers[0]}}" selected>{{tickers[0]}}</option>-->
+<!--            {% for ticker in tickers[1:] %}-->
+<!--            <option value="{{ticker}}">{{ticker}}</option>-->
+<!--            {% endfor %}-->
+<!--        </select>-->
+<!--        <input type="submit"/>-->
+<!--    </form>-->
+    <h4>Today we recommend having:
+        {% for stock in portfolio %}
+            {{ stock }} - {{ "{:.2%}".format(portfolio[stock]) }}
+        {% endfor %}
+        of your portfolio.
+    </h4>
+
+    <div class="top-visualizations" style="width:100%">
+        <img src="data:image/png;base64, {{ portfolio_plot_url }}" style="width:40%">
     </div>
-
-    <p>Select the stock you wish to see predictions for:</p>
-    <form action="{{url_for('view_model')}}" method="post">
-        <select name="stock" method="GET" action="/">
-            <option value="{{tickers[0]}}" selected>{{tickers[0]}}</option>
-            {% for ticker in tickers[1:] %}
-            <option value="{{ticker}}">{{ticker}}</option>
-            {% endfor %}
-        </select>
-        <input type="submit"/>
-    </form>
-
 
 {% endblock %}
 
