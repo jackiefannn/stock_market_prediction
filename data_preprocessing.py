@@ -10,7 +10,7 @@ import datetime
 def preprocess_data(ticker):
     start_date = datetime.datetime(2015,1,1)
     # end_date = datetime.datetime(2022,3,18)
-    end_date = datetime.datetime.today() - datetime.timedelta(days=1) # up to yesterday's date
+    end_date = datetime.datetime.today() - datetime.timedelta(days=2) # up to yesterday's date
 
     ## stock data
     ## bug fix: https://stackoverflow.com/questions/69500226/on-running-this-python-code-in-google-colab-it-showing-me-error-can-anyone-ple

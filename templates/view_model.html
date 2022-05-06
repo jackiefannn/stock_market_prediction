@@ -13,10 +13,18 @@
 {% block content %}
 
 <!--        <a>Viewing historical data and prediction for {{ stock }}:</a>-->
+    <h3 text-align="center">Trading Decision for {{ stock }}: <b>{{ trading_strategy }}</b></h3>
+    <div class="top-visualizations" style="width:100%">
+        <img src="data:image/png;base64, {{ portfolio_plot_url }}" style="width:40%">
+        <img src="data:image/png;base64, {{ decision_plot_url }}" style="width:40%">
+    </div>
+    <ul class="explanation">
+        {% for explanation in portfolio_explanation %}
+            <li>{{ explanation }}</li>
+        {% endfor %}
+    </ul>
         <img src="data:image/png;base64, {{ stock_plot_url }}">
-        <img src="data:image/png;base64, {{ decision_plot_url }}">
-        <img src="data:image/png;base64, {{ macro_plot_url }}">
-        <img src="data:image/png;base64, {{ portfolio_plot_url }}">
+        <img src="data:image/png;base64, {{ market_indicator_plot_url }}">
 
 
 {% endblock %}
